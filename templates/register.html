@@ -1,0 +1,46 @@
+  {% extends "base.html" %}
+
+  {% block title %} 
+  Register
+  {% endblock %} 
+ 
+  {% block body %} 
+  <div class="container">
+    <div class="box">
+      <form action="" method="post">
+        <h1 style="color: tomato ; text-align:center;">Register</h1>
+
+        {% with messages=get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+         {% for category,msg in messages %}
+         <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+          <strong>{{msg}}</strong> 
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+         {% endfor %}
+        {% endif %}
+
+        {% endwith %}
+
+    <input type="text" name="username" placeholder="enter your username" value="{{username}}">
+    <input type="email" name="email" placeholder="enter your email" value="{{email}}">
+    <input type="password" name="password" placeholder="enter password" value="{{password}}">
+    <input type="password" name="confirm" placeholder="confirm password" value="{{confirm}}">
+    <select name="role" id="">
+      <option value="Doctor"  >Doctor</option>
+      <option value=" Patient">Patient</option>
+    </select>
+    <input type="submit" class="btn btn-success" value="Sign Up"  style="border-radius: 20px 5px 20px 5px; 
+    display:flex; width:70%; text-align: center; 
+    padding-left:25%; 
+    font-size:larger;">
+      </form>
+      <p style=" width:70%; text-align: center; padding-left:25%;">Already have an account? <a href="/login">Login</a></p>
+      
+    </div>
+    
+  </div>
+  
+  {% endblock %}
+  

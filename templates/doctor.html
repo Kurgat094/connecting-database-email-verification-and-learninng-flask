@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}
+ <title>doctor schedule</title>
+{% endblock %} 
+
+
+
+{% block body %}  
+
+ <div class="container">
+    <div class="box">
+        <form action="" method="post">
+            <input type="text" placeholder="Enter patient's name" name="patientname" value="{{patientname}}" >
+            <input type="email" placeholder="Enter email" name="email" value="{{email}}">
+            <input type="text" placeholder="type of disease" name="disease" value="{{disease}}">
+            <input type="text" placeholder="Medication" name="medication" value="{{medication}}">
+            <input type="text" placeholder="Test" name="test" value="{{test}}">
+            <input type="date" placeholder="Appointment date" name="date" value="{{date}}" >
+            <input type="time" placeholder="Appointment time" name="time" value="{{time}}" >
+            <input type="submit" class="btn btn-success" value="submit"  style="border-radius: 20px 5px 20px 5px;">
+        </form>
+    </div>
+ </div>
+{% endblock %}

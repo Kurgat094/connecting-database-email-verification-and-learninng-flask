@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap/css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap/js/bootstrap.js')}}">
+    <style>
+        body{
+            background-color: aliceblue;
+
+        }
+        .container{
+            align-items: center;
+            justify-content: center;
+        }
+        input{
+            width: 100%;
+            outline: green;
+            padding-left: 5px;
+            margin: 5px auto;
+            height: 40px;
+            border-radius: 20px 5px 20px 5px;
+            color: tomato;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content my-5">
+            <div class="boxes">
+            <form action="" method="post">
+                <div class="row">
+                    <div class="col-lg-12">
+                <p>Name <br>
+                <input type="text" placeholder="Enter patient's name" name="patientname" value="{{update[1]}}" ></p>
+            </div>
+            <div class="col-lg-6">
+                <p>Email <br>
+                    <input type="email" placeholder="Enter email" name="email" value="{{update[2]}}"></p>
+            </div>
+            <div class="col-lg-6">
+                <p>Disease <br>
+                    <input type="text" placeholder="type of disease" name="disease" value="{{update[3]}}"></p>
+            </div>
+            <div class="col-lg-6">
+                <p>Medication <br>
+                    <input type="text" placeholder="Medication" name="medication" value="{{update[4]}}"></p>
+            </div>
+            <div class="col-lg-6">
+                
+                <p>Test <br>
+                    <input type="text" placeholder="Test" name="test" value="{{update[5]}}"> </p>
+            </div>
+            <div class="col-lg-6">
+                <p>Appointment date <br>
+                    <input type="date" placeholder="Appointment date" name="date" value="{{update[6]}}" > </p>
+            </div>
+            <div class="col-lg-6">
+                <p>Appointment time <br>
+                    <input type="time" placeholder="Appointment time" name="time" value="{{update[7]}}" > </p> 
+            </div>
+            <div class="col-lg-3">
+                <input type="submit" class ="btn btn-success" value="update"  style="border-radius: 20px 5px 20px 5px; ">
+            </div>
+                
+            </div>
+</body>
+</html>
+
+
+
+
+

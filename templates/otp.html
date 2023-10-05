@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>otp</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap/css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap/js/bootstrap.js')}}">
+    <style>
+    
+            body{
+                background-color: aliceblue;
+    
+            }
+            .container{
+                align-items: center;
+                justify-content: center;
+            }
+            .box{ margin-top: 60px;
+                width: 350px;
+                height: auto;
+                box-shadow:  2px 2px 10px black;
+                padding: 10px;
+                border-radius: 30px 5px 30px 5px;
+                position: absolute;
+                top:50%;
+                left:50%;
+                transform: translate(-50%,-50%);
+            }
+            input{
+                width: 100%;
+                padding-left: 5px;
+                margin: 5px auto;
+                height: 40px;
+                border-radius: 20px 5px 20px 5px;
+            } 
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <form action="" method="post">
+            <h3 style="text-align: center ;">Enter the OTP-code</h3>
+            <input type="text" name="otp" placeholder="Enter the OTP-code " value=""> <br>
+            <input type="submit" class ="btn btn-success" value="Enter"  style="border-radius: 20px 5px 20px 5px; " >
+            </form>
+        </div>
+       </div><a href=""></a>
+</body>
+</html>

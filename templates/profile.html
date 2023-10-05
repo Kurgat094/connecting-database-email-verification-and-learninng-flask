@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}
+
+{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+        <div class="col-lg-3">
+            <div class="card">
+                <img src="/static/images/{{file}}" alt="upload" width="4000" height="4000">
+                    <form method="POST" action="/upload" >
+                        <input type="file" name="file">
+                        <input type="submit" value="Upload" class="btn btn-success ">
+                    </form>
+            </div>
+        </div>
+        <div class="col-lg-9">
+           
+        </div>
+    </div>
+    </div>
+
+{% endblock %} 

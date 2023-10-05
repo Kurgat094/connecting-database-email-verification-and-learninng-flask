@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %} 
+Login
+{% endblock %} 
+
+{% block body %} 
+<div class="container">
+  <div class="box">
+    {{session['username']}}
+    <form action="" method="post">
+      <h1 style="color: tomato ; text-align:center;">Sign In</h1>
+      
+      {% with messages=get_flashed_messages(with_categories=True) %}
+      {% if messages %}
+       {% for category,msg in messages %}
+       <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+        <strong>{{msg}}</strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+       {% endfor %}
+      {% endif %}
+
+      {% endwith %}
+      
+  <input type="text" name="username" placeholder=" enter your username or email" value="{{username}}">
+  <input type="password" name="password" placeholder="enter password" value="{{password}}">
+  <input type="submit" class="btn btn-success" value="Login"  style="border-radius: 20px 5px 20px 5px;">
+    </form>
+    <p>Don't have an account? <a href="/" >Register</a></p>
+    
+  </div>
+
+</div>
+
+{% endblock %}

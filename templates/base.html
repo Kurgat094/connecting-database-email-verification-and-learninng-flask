@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block  title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap/css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap/js/bootstrap.js')}}">
+    <style>
+        body {
+            background-image: linear-gradient(rgba(253, 253, 253,0.7), rgba(189, 186, 43, 0.9), rgba(245, 238, 238 ,0.9)),url("{{url_for('static', filename='images/med.jpg')}}");
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
+        
+    </style>
+</head>
+
+<body>
+      <h1 style="color: tomato;"><b>Hospital</b></h1>
+      <marquee behavior="" direction="left" style="color: blue; font-size:xx-large;"><i><b><strong>Nehema hospital full of hopes😉 </strong>  </b></i></marquee>
+    <span>
+        {% if 'username' in session %}
+        {% if session['role']=='Doctor' %}
+        <li style="float: left;"><a href="/home" class="btn btn-warning">HOME</a></li>
+        <li ><a href="/logout" class="btn btn-danger">Logout</a></li>
+        <li ><a href="/appointments" class="btn btn-success">Appointments</a></li>
+        {% else %}
+        <li ><a href="/logout" class="btn btn-danger">Logout</a></li>
+        <li ><a href="/tests" class="btn btn-primary">Tests</a></li>
+        <li ><a href="/dashboard"class="btn btn-success">Dashboard</a></li>
+
+        {% endif %}
+    
+        {% else %}
+       
+        <li ><a href="/"class="btn btn-primary">Register</a></li>
+        <li ><a href="/login" class="btn btn-secondary">Login</a></li>
+        <li>  <a href="/occupation" class="btn btn-success" >Occupation</a></li>
+        <li>{{session['username']}}</li>
+        {% endif %}
+    </span> 
+    {% block body %}
+    {% endblock %}
+
+    <script src="{{url_for('static',filename='bootstrap/js/bootstrap.js')}}"></script>
+</body>
+</html>
